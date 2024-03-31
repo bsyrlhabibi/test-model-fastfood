@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+       >
+    <!-- ImageView untuk menampilkan gambar yang dipilih -->
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:src="@drawable/food_store"
+        android:adjustViewBounds="true"
+        android:padding="16dp"
+        android:layout_marginBottom="16dp"
+        android:contentDescription="foto" />
+
+    <!-- Tombol untuk mengambil gambar dari kamera -->
+    <Button
+        android:id="@+id/btnCamera"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ambil dari Kamera"
+        android:layout_below="@id/imageView"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Tombol untuk memilih gambar dari folder -->
+    <Button
+        android:id="@+id/btnGallery"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Pilih dari Folder"
+        android:layout_below="@id/btnCamera"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Tombol untuk memproses prediksi -->
+    <Button
+        android:id="@+id/btnProcessPrediction"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Proses Prediksi"
+        android:layout_below="@id/btnGallery"
+        android:layout_marginBottom="8dp" />
+
+    <!-- ScrollView untuk menggulirkan konten di dalamnya -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_below="@id/btnProcessPrediction">
+
+        <!-- TextView untuk menampilkan hasil prediksi -->
+        <TextView
+            android:id="@+id/tvResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:padding="16dp"
+            android:background="@drawable/textview_border" />
+
+    </ScrollView>
+
+    </LinearLayout>
+
+    <!-- ProgressBar -->
+    <ProgressBar
+        android:id="@+id/loadingView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
+
+</RelativeLayout>
